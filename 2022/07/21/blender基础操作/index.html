@@ -1,0 +1,502 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>blender基础操作 | Sara</title><meta name="keywords" content="建模"><meta name="author" content="sara"><meta name="copyright" content="sara"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="视图视角切换 shift + 鼠标左键  平移 长按鼠标滚轮，旋转 鼠标滚轮，缩放 ~键 呼唤出视角小键盘  视图菜单 T左侧工具栏 N右侧工具栏 数字键盘的点：聚焦到物体 home，聚焦到所有 5 正交，透视 &#x2F; 局部视图，其他物体消失  添加 shift + A  添加参考图  物体 shift + 空格 G+X  在x轴上移动 G+shift+Z 排除z轴，只在xy轴移动 R+Z 按Z轴旋转">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blender基础操作">
+<meta property="og:url" content="http://hiera123.github.io/2022/07/21/blender%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="Sara">
+<meta property="og:description" content="视图视角切换 shift + 鼠标左键  平移 长按鼠标滚轮，旋转 鼠标滚轮，缩放 ~键 呼唤出视角小键盘  视图菜单 T左侧工具栏 N右侧工具栏 数字键盘的点：聚焦到物体 home，聚焦到所有 5 正交，透视 &#x2F; 局部视图，其他物体消失  添加 shift + A  添加参考图  物体 shift + 空格 G+X  在x轴上移动 G+shift+Z 排除z轴，只在xy轴移动 R+Z 按Z轴旋转">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://hiera123.github.io/img/11.jpg">
+<meta property="article:published_time" content="2022-07-21T08:15:23.000Z">
+<meta property="article:modified_time" content="2022-07-24T22:46:21.488Z">
+<meta property="article:author" content="sara">
+<meta property="article:tag" content="建模">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hiera123.github.io/img/11.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://hiera123.github.io/2022/07/21/blender%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'blender基础操作',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-25 06:46:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/11.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/11.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Sara</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">blender基础操作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-21T08:15:23.000Z" title="发表于 2022-07-21 16:15:23">2022-07-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-24T22:46:21.488Z" title="更新于 2022-07-25 06:46:21">2022-07-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/blender%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">blender学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="blender基础操作"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="视图视角切换"><a href="#视图视角切换" class="headerlink" title="视图视角切换"></a>视图视角切换</h1><ul>
+<li>shift + 鼠标左键  平移</li>
+<li>长按鼠标滚轮，旋转</li>
+<li>鼠标滚轮，缩放</li>
+<li>~键 呼唤出视角小键盘</li>
+</ul>
+<h1 id="视图菜单"><a href="#视图菜单" class="headerlink" title="视图菜单"></a>视图菜单</h1><ul>
+<li>T左侧工具栏</li>
+<li>N右侧工具栏</li>
+<li>数字键盘的点：聚焦到物体</li>
+<li>home，聚焦到所有</li>
+<li>5 正交，透视</li>
+<li>/ 局部视图，其他物体消失</li>
+</ul>
+<h1 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h1><ul>
+<li>shift + A </li>
+<li>添加参考图</li>
+</ul>
+<h1 id="物体"><a href="#物体" class="headerlink" title="物体"></a>物体</h1><ul>
+<li>shift + 空格</li>
+<li>G+X  在x轴上移动</li>
+<li>G+shift+Z 排除z轴，只在xy轴移动</li>
+<li>R+Z 按Z轴旋转</li>
+<li>s+X  沿x轴缩放，s shift+z排除掉z轴，在x和y轴上缩放</li>
+<li>shift+ 鼠标右键，设置游标</li>
+<li>shift+ s 吸附</li>
+<li>shift+ D  x  复制 x轴向控制  复制出的物体是独立的    </li>
+<li>shift+R 重复上一步复制操作</li>
+<li>alt+D  关联复制，编辑模式下，改变原物体，另一物体也改变 。物体模式下，大小旋转不会改变</li>
+<li>ctrl+p 先框选所有，然后设置成父物体</li>
+<li>alt+p 清空父级</li>
+<li>H 隐藏物体 alt+h 显示隐藏物体</li>
+</ul>
+<h1 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h1><ul>
+<li>A 全选</li>
+<li>shift+鼠标左键 加选</li>
+<li>ctrl+i 反选</li>
+<li>alt+a 全部不选</li>
+<li>ctrl+右键 ：套索选中</li>
+<li>C 刷选   + 鼠标中键，反选</li>
+<li>随机选择： 先全选所有，选中不想要的物体，反选，H隐藏，再点击随机选择</li>
+</ul>
+<h1 id="坐标系，轴心，吸附，衰减编辑"><a href="#坐标系，轴心，吸附，衰减编辑" class="headerlink" title="坐标系，轴心，吸附，衰减编辑"></a>坐标系，轴心，吸附，衰减编辑</h1><ul>
+<li>G,Z，Z : 按自己的z轴移动</li>
+<li>吸附：<ul>
+<li>增量：</li>
+<li>面：</li>
+<li>顶点：</li>
+</ul>
+</li>
+<li>衰减编辑：<ul>
+<li>O 打开</li>
+<li>G移动，中心滚轮控制移动缩放，圈中范围内的物体。</li>
+</ul>
+</li>
+</ul>
+<h1 id="显示类别，GIMO显示"><a href="#显示类别，GIMO显示" class="headerlink" title="显示类别，GIMO显示"></a>显示类别，GIMO显示</h1><p><img src="/img/blender/2.png" alt="avatar"></p>
+<h1 id="显示模式"><a href="#显示模式" class="headerlink" title="显示模式"></a>显示模式</h1><p><img src="/img/blender/1_showModel.png" alt="avatar"></p>
+<h1 id="右侧工具栏"><a href="#右侧工具栏" class="headerlink" title="右侧工具栏"></a>右侧工具栏</h1><ul>
+<li><p>ctrl+A </p>
+<ul>
+<li>条目：全部变换后，原点归0，保存修改后的形态</li>
+<li>工具</li>
+<li>视图： 结束点：消失</li>
+</ul>
+<p>  <img src="/img/blender/3.png" alt="avatar"></p>
+</li>
+</ul>
+<h1 id="大纲与属性"><a href="#大纲与属性" class="headerlink" title="大纲与属性"></a>大纲与属性</h1><p><img src="/img/blender/4.png" alt="avatar"></p>
+<h1 id="案例闹钟及渲染"><a href="#案例闹钟及渲染" class="headerlink" title="案例闹钟及渲染"></a>案例闹钟及渲染</h1><p><img src="/img/blender/5.png" alt="avatar"></p>
+<h1 id="编辑模式点线面"><a href="#编辑模式点线面" class="headerlink" title="编辑模式点线面"></a>编辑模式点线面</h1><ul>
+<li>tab：切换模式</li>
+<li>G，G：滑移</li>
+<li>切换点线面–1，2，3</li>
+</ul>
+<h1 id="挤出"><a href="#挤出" class="headerlink" title="挤出"></a>挤出</h1><ul>
+<li>E</li>
+<li>Alt+E 选择基础方式</li>
+<li>CTRL+右键： 挤出到光标处</li>
+<li>撤销挤出后，合并顶点—-全选–网格–合并–按距离</li>
+<li>取消挤出 ： ctrl+Z</li>
+</ul>
+<h1 id="内插，倒角"><a href="#内插，倒角" class="headerlink" title="内插，倒角"></a>内插，倒角</h1><ul>
+<li>i : 内插</li>
+<li>ctrl+B 倒角</li>
+<li>ctrl+b 按住滚轮，控制段数</li>
+</ul>
+<h1 id="环切，切割"><a href="#环切，切割" class="headerlink" title="环切，切割"></a>环切，切割</h1><ul>
+<li>ctrl+r  ：环切</li>
+<li>ctrl+r  + 右键，中间的位置</li>
+<li>ctrl+r  + 滚轮  多段环切</li>
+<li>k: 切割  c:切穿  a:角度限制</li>
+<li>左侧工具栏切分工具：全选整个物体，切分后可选择清空内侧和清空外侧。</li>
+</ul>
+<h1 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h1><ul>
+<li>左侧工具栏，多边形建形</li>
+<li>旋绕工具： E挤出，全选，然后旋绕点加号旋转一圈</li>
+<li>光滑工具，随机</li>
+<li>滑移边线工具</li>
+<li>法向缩放</li>
+</ul>
+<h1 id="删除，填充，面朝向"><a href="#删除，填充，面朝向" class="headerlink" title="删除，填充，面朝向"></a>删除，填充，面朝向</h1><ul>
+<li><img src="/img/blender/6.png" alt="avatar"></li>
+<li>填充<br>  <img src="/img/blender/7.png" alt="avatar"><br>  <img src="/img/blender/8.png" alt="avatar"></li>
+<li>面朝向<ul>
+<li>gimos选择面朝向</li>
+<li>shift+N 重新计算法向</li>
+<li> <img src="/img/blender/9.png" alt="avatar"></li>
+<li>关闭面朝向</li>
+</ul>
+</li>
+</ul>
+<h1 id="编辑模式选择"><a href="#编辑模式选择" class="headerlink" title="编辑模式选择"></a>编辑模式选择</h1><ul>
+<li>选择网格常用：圈选，刷选，框选</li>
+<li>循环选择：ctrl+鼠标左键双击，shift加选，shift+ALT +选中面，加选循环边</li>
+<li>最短路径：选择第一个–ctrl—选中最后一个</li>
+<li>选择：间隔式弃选，批量处理特殊形状</li>
+<li>随机选择</li>
+<li>shift+G :按特征全选</li>
+<li>编辑模式下，鼠标悬停，L选中，P分离</li>
+<li>物体模式下，ctrl+j  选中合并的物体</li>
+</ul>
+<h1 id="屋子案例"><a href="#屋子案例" class="headerlink" title="屋子案例"></a>屋子案例</h1><ul>
+<li><p>参考图对齐，取消透视勾选</p>
+</li>
+<li><p>自动对齐某个点： G+X，，ctrl，鼠标选中目标点，会自动吸附顶点</p>
+</li>
+<li><p>卡在中间的位置：选择两个线，shift+D复制，右键取消，p键进行选中项分离，tab回到物体模式，选择两条线回到编辑模式，f键填充，E键挤出，吸附到顶点</p>
+</li>
+<li><p>调整整体的高度：shift+G，选择相似–共面，选择吸附–增量—前视图—G，Z</p>
+</li>
+<li><p>操场：ctrl+循环切割删除面，选择线，f填充</p>
+</li>
+<li><p>  <img src="/img/blender/10.png" alt="avatar"></p>
+</li>
+<li><p>窗户：ctrl+鼠标左键双击选择循环边，shift+左键双击加选</p>
+<ul>
+<li><p>shift+单次取消</p>
+</li>
+<li><p>i，i 内插</p>
+</li>
+<li><p>alt+E 法向挤出，负向挤出</p>
+</li>
+<li><p>窗户上色需要指定一个顶点组：数据属性，新建顶点组，重命名，指定</p>
+</li>
+<li><p>侧面窗户：透视模式，看看需要选择哪几个，取消透视面ctrl+”+”,ctrl+”+”连边框一起回选中，x融并面：</p>
+<ul>
+<li>小键盘的加号才行</li>
+</ul>
+</li>
+<li><p>柱子：s 0 缩放到一个顶点</p>
+<ul>
+<li><p>柱子窗户：内插–环切—内插–挤出</p>
+</li>
+<li><p>e键挤出，右键归为，s排除Z轴</p>
+</li>
+<li><p>alt+D关联复制</p>
+</li>
+<li><p> <img src="/img/blender/11.png" alt="avatar"></p>
+</li>
+</ul>
+</li>
+<li><p>教学楼的侧面窗户</p>
+<ul>
+<li>shift+右键 ：移动到游标</li>
+<li>内插</li>
+<li>ctrl+”+” ,shift+D复制，r+x 旋转，</li>
+<li>e外侧挤出</li>
+<li>加修改器，阵列，调整间隔</li>
+<li>复制：shift+D,R ，z  -90 ，顶视图,调整位置</li>
+<li><img src="/img/blender/12.png" alt="avatar"></li>
+</ul>
+</li>
+<li><p>圆形窗户</p>
+<ul>
+<li><img src="/img/blender/12.png" alt="avatar"></li>
+<li>柱体，选择需要的面，删除顶点</li>
+<li>G，Y,菜单项—尖分面</li>
+<li>前视图，删除下半边面</li>
+<li>环切</li>
+<li>i，i分别内插</li>
+<li>选中两条线，e,y轴挤出，选中面，ctrl+l  z轴挤出，GG滑移超出的角</li>
+<li>增加厚度，选择循环边-e,y轴挤出</li>
+<li>添加修改器—阵列</li>
+</ul>
+</li>
+<li><p>顶楼操场</p>
+<ul>
+<li>分离然后倒角</li>
+</ul>
+</li>
+<li><p>文体馆</p>
+<ul>
+<li>/单独观察，其他物体隐藏</li>
+<li>环切中间，倒角</li>
+<li>e,s,shift+z ，缩放</li>
+<li><img src="/img/blender/14.png" alt="avatar"></li>
+<li>选中面，alt+E法向挤出，i内插，alt+E负向挤出</li>
+<li>楼顶<ul>
+<li>两次i，大的框架内插</li>
+<li>栏杆<ul>
+<li>选择循环边，复制一份，分离</li>
+<li>E挤出z轴，细分细分</li>
+<li>添加修改器–线框</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>瓦片</p>
+<ul>
+<li>平面，环切，中间面弯度</li>
+<li>修改器，阵列，num:32</li>
+<li>再加一个阵列，Y轴和Z轴偏移，num:8</li>
+<li>缩小，旋转何时的大小角度</li>
+<li>数量增加</li>
+<li>复制，z轴90度</li>
+<li>复制遮盖交汇处的柱子，取消勾选在视图中显示修改器效果</li>
+<li>应用两个修改器</li>
+<li>切开工具，C切穿，回车</li>
+<li>选择单个瓦片，透视删掉多余的面</li>
+<li>挤出屋顶，扩张到瓦片，GG滑移超出的</li>
+</ul>
+</li>
+<li><p>整理大纲</p>
+</li>
+<li><p>球场，选中面，shift+D复制，p键分离</p>
+<ul>
+<li>融并顶点，z轴挤出</li>
+<li>切换线，选中并排边（ctrl+alt+鼠标左键），ctrl+B 倒角，width:1.2 num：16 ，空隙留有距离</li>
+<li>内插面 num:0.06,,shift+Rx5 重复上一步 </li>
+<li>选内测所有循环边，ctrl+B倒角，width:0.0022.</li>
+<li>外侧：循环边，ctrl+B倒角，挤出，循环边，g,z降低</li>
+<li>共面，ctrl+”+” G，Z 降低高度，缩小跑道，排除z轴缩放</li>
+</ul>
+</li>
+<li><p>草坪</p>
+<ul>
+<li>添加柱体，目标物体添加布尔修改器，参数物体选择柱体，确认插值状态，隐藏柱体</li>
+<li><ol start="2">
+<li>插件：bool 激活，不需要添加布尔修改器，直接difference</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>门禁细节</p>
+<ul>
+<li>选择线，倒角，超椭圆模式</li>
+<li>圆柱体，旋转，r,x ,90，面尖分，反选，删除面，e挤出，ctrl+J 合并</li>
+<li><img src="/img/blender/15.png" alt="avatar"></li>
+<li>镜像修改器，纯轴：镜像中心，修改器物体改成镜像中心</li>
+</ul>
+</li>
+<li><p>停车场</p>
+<ul>
+<li>立方体，布尔修改，r,x -45.，sy</li>
+<li>厚度，增加立方体，用同一个刀具</li>
+<li>滑移面，对齐</li>
+</ul>
+</li>
+<li><p>大门前细节</p>
+<ul>
+<li>弯曲：立方体，环切，全选，shift+w，游标放在要旋转的根部，+alt可以使另一边也弯曲</li>
+</ul>
+</li>
+<li><p>树</p>
+<ul>
+<li>树干<ul>
+<li>柱体，6顶点</li>
+<li>上面，s,挤出</li>
+<li>g偏移，s缩小面</li>
+<li>ctrl+右键，挤出到想要的目标位</li>
+<li>侧枝：滑移，环切，挤出</li>
+</ul>
+</li>
+<li>树叶<ul>
+<li>棱角球</li>
+<li>衰减编辑，勾选仅相连项</li>
+<li>g+滚轮</li>
+<li>选中面 g,g</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>绿地</p>
+<ul>
+<li>数目打倒建集合，</li>
+<li>新建粒子系统，选毛发</li>
+<li>选集合</li>
+<li>旋转参数：缩放调高，随机性调高</li>
+<li>去除教学路的部分<ul>
+<li>细分平面，刷选需要长树的地方</li>
+<li>指定定点组，密度和长度都给顶点组</li>
+<li>权重绘制模式，substarct</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>晶格修改器</p>
+<ul>
+<li>柱子，线框修改器，加晶格以及晶格修改器，</li>
+<li>选晶格编辑，提交分辨率，旋转</li>
+<li>应用修改器，合并</li>
+<li>加阵列</li>
+</ul>
+</li>
+<li><p>文本</p>
+<ul>
+<li>shift+a</li>
+<li>中文</li>
+<li>添加修改器实体化</li>
+<li>rx90</li>
+<li>广州市第一中学</li>
+</ul>
+</li>
+<li><p>穹顶</p>
+<ul>
+<li>复制缩小比例</li>
+<li>立方体，改变造型，添加表面细分修改器，4，4</li>
+<li>环切在倒角，造型像圆柱体</li>
+<li>布尔插值</li>
+</ul>
+</li>
+<li><p><img src="/img/blender/16.png" alt="avatar">    </p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- 材质
+    - 自发光
+        - 着色编辑器里面，自发光强度调整，渲染引擎的辉光打开
+    - 细网
+        - 使用带有透明通道材质
+        - 复制，删除修改器
+        - 添加砖墙纹理
+        - 编辑模式下，选择UV模式，U展开
+        - 添加映射和纹理坐标，要求贴图按UV来走
+        - 调整缩放和色彩
+        - 用颜色控制alpha
+        - 材质里的混合模式和阴影模式选择alpha
+        - 添加反转到连接线上
+
+    - 参考图，校徽
+        - 参考图拖到着色编辑器，指定颜色
+        - UV调整
+
+    - 车栏杆
+        - 棋盘格纹理
+        
+</code></pre>
+<h1 id="完成图"><a href="#完成图" class="headerlink" title="完成图"></a>完成图</h1><ul>
+<li>材质完成图和布光完成图</li>
+<li><img src="/img/blender/17.png" alt="avatar">    </li>
+<li><img src="/img/blender/18.png" alt="avatar"> </li>
+<li><img src="/img/blender/19.png" alt="avatar"> </li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">sara</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://hiera123.github.io/2022/07/21/blender%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">http://hiera123.github.io/2022/07/21/blender%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://hiera123.github.io" target="_blank">Sara</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BB%BA%E6%A8%A1/">建模</a></div><div class="post_share"><div class="social-share" data-image="/img/11.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/07/14/%E9%9D%A2%E8%AF%95%E9%A2%98/"><img class="next-cover" src="/img/11.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">面试题</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E8%A7%86%E8%A7%92%E5%88%87%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">视图视角切换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E8%8F%9C%E5%8D%95"><span class="toc-number">2.</span> <span class="toc-text">视图菜单</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0"><span class="toc-number">3.</span> <span class="toc-text">添加</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%A9%E4%BD%93"><span class="toc-number">4.</span> <span class="toc-text">物体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">5.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E7%B3%BB%EF%BC%8C%E8%BD%B4%E5%BF%83%EF%BC%8C%E5%90%B8%E9%99%84%EF%BC%8C%E8%A1%B0%E5%87%8F%E7%BC%96%E8%BE%91"><span class="toc-number">6.</span> <span class="toc-text">坐标系，轴心，吸附，衰减编辑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E7%B1%BB%E5%88%AB%EF%BC%8CGIMO%E6%98%BE%E7%A4%BA"><span class="toc-number">7.</span> <span class="toc-text">显示类别，GIMO显示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">显示模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%B3%E4%BE%A7%E5%B7%A5%E5%85%B7%E6%A0%8F"><span class="toc-number">9.</span> <span class="toc-text">右侧工具栏</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%A7%E7%BA%B2%E4%B8%8E%E5%B1%9E%E6%80%A7"><span class="toc-number">10.</span> <span class="toc-text">大纲与属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%E9%97%B9%E9%92%9F%E5%8F%8A%E6%B8%B2%E6%9F%93"><span class="toc-number">11.</span> <span class="toc-text">案例闹钟及渲染</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E7%82%B9%E7%BA%BF%E9%9D%A2"><span class="toc-number">12.</span> <span class="toc-text">编辑模式点线面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%A4%E5%87%BA"><span class="toc-number">13.</span> <span class="toc-text">挤出</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E6%8F%92%EF%BC%8C%E5%80%92%E8%A7%92"><span class="toc-number">14.</span> <span class="toc-text">内插，倒角</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%88%87%EF%BC%8C%E5%88%87%E5%89%B2"><span class="toc-number">15.</span> <span class="toc-text">环切，切割</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B7%A5%E5%85%B7"><span class="toc-number">16.</span> <span class="toc-text">其他工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%EF%BC%8C%E5%A1%AB%E5%85%85%EF%BC%8C%E9%9D%A2%E6%9C%9D%E5%90%91"><span class="toc-number">17.</span> <span class="toc-text">删除，填充，面朝向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E9%80%89%E6%8B%A9"><span class="toc-number">18.</span> <span class="toc-text">编辑模式选择</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%8B%E5%AD%90%E6%A1%88%E4%BE%8B"><span class="toc-number">19.</span> <span class="toc-text">屋子案例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%8C%E6%88%90%E5%9B%BE"><span class="toc-number">20.</span> <span class="toc-text">完成图</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('/img/11.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By sara</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
